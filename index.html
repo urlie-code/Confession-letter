@@ -803,6 +803,40 @@ body {
     }
 }
 
+    /* =========================
+   FALLING SAKURA PETALS
+========================= */
+
+.petal {
+    position: fixed;
+    top: -30px;
+    pointer-events: none;
+    z-index: 0;
+    font-size: 18px;
+    opacity: 0;
+    animation: petalFall linear forwards;
+}
+
+@keyframes petalFall {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -30px, 0) rotate(0deg);
+    }
+
+    10% {
+        opacity: .75;
+    }
+
+    50% {
+        transform: translate3d(50px, 50vh, 0) rotate(180deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translate3d(-40px, 110vh, 0) rotate(360deg);
+    }
+}
+
 
 /* =========================
    MOBILE
@@ -1393,6 +1427,50 @@ function createHearts() {
 
     }
 
+}
+
+    /* =========================================
+   FALLING SAKURA PETALS
+========================================= */
+
+function createPetal() {
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+
+    const petals = ["🌸", "🌸", "🌸", "✿"];
+
+    petal.textContent =
+        petals[Math.floor(Math.random() * petals.length)];
+
+    petal.style.left =
+        Math.random() * 100 + "vw";
+
+    petal.style.fontSize =
+        (12 + Math.random() * 12) + "px";
+
+    petal.style.animationDuration =
+        (6 + Math.random() * 6) + "s";
+
+    petal.style.animationDelay =
+        (Math.random() * 2) + "s";
+
+    document.body.appendChild(petal);
+
+    setTimeout(() => {
+        petal.remove();
+    }, 14000);
+}
+
+/* Create petals continuously */
+
+setInterval(createPetal, 700);
+
+/* Initial petals */
+
+for (let i = 0; i < 12; i++) {
+    setTimeout(createPetal, i * 400);
 }
 
 </script>
