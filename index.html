@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>A Special Letter ❤️</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Caveat:wght@400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #fff0f4, #ffe4ec);
+    color: #171717;
+}
+
+/* =========================
+   SCREENS
+========================= */
+
+.screen {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        opacity .8s ease,
+        transform .8s ease;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(.96);
+}
+
+
+/* =========================
+   BACKGROUND DECORATIONS
+========================= */
+
+.decor {
+    position: fixed;
+    pointer-events: none;
+    color: #f2a6ba;
+    opacity: .45;
+
+    animation:
+        float 4s ease-in-out infinite;
+}
+
+.decor:nth-child(1) {
+    top: 15%;
+    left: 18%;
+}
+
+.decor:nth-child(2) {
+    top: 72%;
+    left: 27%;
+    animation-delay: 1s;
+}
+
+.decor:nth-child(3) {
+    top: 20%;
+    right: 18%;
+    animation-delay: 1.5s;
+}
+
+.decor:nth-child(4) {
+    bottom: 18%;
+    right: 22%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0) rotate(0);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(8deg);
+    }
+}
+
+
+/* =========================
+   SCREEN 1
+========================= */
+
+.intro-card {
+
+    width: min(90%, 370px);
+
+    padding:
+        30px
+        35px
+        32px;
+
+    background: rgba(255,255,255,.58);
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow:
+        0 15px 40px
+        rgba(210,120,145,.10);
+
+    backdrop-filter: blur(5px);
+
+    animation: cardAppear 1s ease;
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+/* MAIL ICON */
+
+.mail-icon {
+    width: 48px;
+    height: 36px;
+
+    margin: 0 auto 15px;
+
+    position: relative;
+
+    background: #fff;
+
+    border: 2px solid #222;
+
+    border-radius: 4px;
+
+    overflow: hidden;
+}
+
+/* Left diagonal */
+.mail-icon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 31px;
+    height: 31px;
+
+    left: -5px;
+    top: -17px;
+
+    border-right: 2px solid #222;
+    border-bottom: 2px solid #222;
+
+    transform: rotate(45deg);
+}
+
+/* Right diagonal */
+.mail-icon::after {
+    content: "";
+
+    position: absolute;
+
+    width: 31px;
+    height: 31px;
+
+    right: -5px;
+    top: -17px;
+
+    border-left: 2px solid #222;
+    border-bottom: 2px solid #222;
+
+    transform: rotate(-45deg);
+}
+
+/* Heart */
+.mail-heart {
+    position: absolute;
+
+    top: -14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-size: 22px;
+
+    z-index: 10;
+
+    line-height: 1;
+}
+
+
+/* TEXT */
+
+.small-title {
+
+    font-size: 8px;
+
+    letter-spacing: 1px;
+
+    color: #aaa;
+
+    margin-bottom: 7px;
+}
+
+.intro-card h1 {
+
+    font-size: 17px;
+
+    line-height: 1.25;
+
+    margin-bottom: 17px;
+}
+
+.intro-card h1 span {
+
+    display: block;
+}
+
+
+/* BUTTON */
+
+.open-button {
+
+    border: none;
+
+    outline: none;
+
+    cursor: pointer;
+
+    padding:
+        10px 25px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    font-weight: 600;
+
+    font-size: 11px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff3b6b,
+            #ff2457
+        );
+
+    box-shadow:
+        0 7px 18px
+        rgba(255,40,90,.25);
+
+    transition: .25s;
+}
+
+.open-button:hover {
+
+    transform:
+        translateY(-2px)
+        scale(1.03);
+}
+
+.open-button:active {
+
+    transform:
+        scale(.96);
+}
+
+
+/* =========================
+   SCREEN 2
+========================= */
+
+.envelope-screen {
+
+    flex-direction: column;
+}
+
+.envelope-area {
+
+    position: relative;
+
+    width: 260px;
+    height: 210px;
+}
+
+
+/* STARS */
+
+.star {
+
+    position: absolute;
+
+    color: #d9a738;
+
+    font-size: 13px;
+
+    animation:
+        starFloat 2.5s
+        ease-in-out
+        infinite;
+}
+
+.star:nth-child(1) {
+    left: 20px;
+    top: 45px;
+}
+
+.star:nth-child(2) {
+    left: 62px;
+    top: 20px;
+    animation-delay: .4s;
+}
+
+.star:nth-child(3) {
+    left: 42px;
+    top: 92px;
+    animation-delay: .8s;
+}
+
+.star:nth-child(4) {
+    left: 78px;
+    top: 67px;
+    animation-delay: 1.2s;
+}
+
+.star:nth-child(5) {
+    left: 105px;
+    top: 35px;
+    animation-delay: 1.5s;
+}
+
+@keyframes starFloat {
+
+    0%,100% {
+        transform:
+            translateY(0)
+            rotate(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px)
+            rotate(15deg);
+    }
+}
+
+
+/* ENVELOPE */
+
+.envelope {
+
+    position: absolute;
+
+    width: 158px;
+    height: 104px;
+
+    left: 50%;
+    top: 62px;
+
+    transform:
+        translateX(-50%);
+
+    background: #fffaf7;
+
+    border:
+        1px solid #e2ad43;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px
+        rgba(180,100,110,.08);
+}
+
+
+/* CENTER LINE */
+
+.envelope-line {
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    top: 44px;
+
+    border-top:
+        1px solid #e2ad43;
+}
+
+
+/* FLAP */
+
+.flap {
+
+    position: absolute;
+
+    z-index: 4;
+
+    left: 0;
+    top: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        79px solid transparent;
+
+    border-right:
+        79px solid transparent;
+
+    border-top:
+        48px solid #fff4f1;
+
+    transform-origin:
+        top center;
+
+    transition:
+        transform .7s ease;
+}
+
+
+/* FOLDS */
+
+.fold-left {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left:
+        78px solid transparent;
+
+    border-bottom:
+        55px solid #fff8f4;
+}
+
+.fold-right {
+
+    position: absolute;
+
+    right: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 0;
+
+    border-right:
+        78px solid transparent;
+
+    border-bottom:
+        55px solid #fff8f4;
+}
+
+
+/* WAX SEAL */
+
+.seal {
+
+    position: absolute;
+
+    z-index: 10;
+
+    left: 50%;
+    top: 33px;
+
+    transform:
+        translateX(-50%);
+
+    width: 28px;
+    height: 28px;
+
+    border-radius: 50%;
+
+    background: #f34f88;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 14px;
+
+    box-shadow:
+        0 3px 9px
+        rgba(240,70,120,.3);
+
+    transition:
+        transform .3s;
+}
+
+.seal:hover {
+
+    transform:
+        translateX(-50%)
+        scale(1.12);
+}
+
+
+/* OPEN */
+
+.envelope.open .flap {
+
+    transform:
+        rotateX(180deg);
+}
+
+.envelope.open .seal {
+
+    transform:
+        translateX(-50%)
+        scale(1.2);
+}
+
+.envelope.open {
+
+    animation:
+        envelopeShake .5s ease;
+}
+
+@keyframes envelopeShake {
+
+    0%,100% {
+        transform:
+            translateX(-50%);
+    }
+
+    25% {
+        transform:
+            translateX(-53%);
+    }
+
+    75% {
+        transform:
+            translateX(-47%);
+    }
+}
+
+
+/* TAP TEXT */
+
+.tap-text {
+
+    position: absolute;
+
+    width: 100%;
+
+    text-align: center;
+
+    top: 180px;
+
+    color: #e6bcc7;
+
+    font-size: 9px;
+}
+
+
+/* =========================
+   SCREEN 3
+========================= */
+
+.letter-screen {
+
+    padding: 20px;
+}
+
+
+/* LETTER */
+
+.letter {
+
+    position: relative;
+
+    width:
+        min(90vw, 380px);
+
+    min-height: 490px;
+
+    padding:
+        62px 27px 25px;
+
+    background:
+        #fffdf9;
+
+    border-radius: 7px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(170,90,110,.10);
+
+    transform:
+        translateY(80px)
+        scale(.85);
+
+    opacity: 0;
+
+    transition:
+        transform 1s
+        cubic-bezier(.2,.8,.2,1),
+
+        opacity 1s ease;
+}
+
+.letter.show {
+
+    transform:
+        translateY(0)
+        scale(1);
+
+    opacity: 1;
+}
+
+
+/* DATE */
+
+.date {
+
+    position: absolute;
+
+    top: 18px;
+    right: 17px;
+
+    color: #cdbdc1;
+
+    font-size: 8px;
+}
+
+.date::before {
+
+    content: "♥ ";
+
+    color: #efa0b4;
+}
+
+
+/* LETTER TEXT */
+
+.letter h2 {
+
+    margin-left: 42px;
+
+    margin-bottom: 28px;
+
+    font-family:
+        'Caveat',
+        cursive;
+
+    font-size: 20px;
+
+    font-weight: 500;
+}
+
+.letter p {
+
+    margin-bottom: 25px;
+
+    font-family:
+        'Caveat',
+        cursive;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+    color: #3d3a3b;
+}
+
+
+/* SIGNATURE */
+
+.signature {
+
+    position: absolute;
+
+    right: 17px;
+    bottom: 45px;
+
+    font-family:
+        'Caveat',
+        cursive;
+
+    font-size: 13px;
+
+    color: #cdbdc1;
+}
+
+
+/* BOTTOM */
+
+.bottom-love {
+
+    position: absolute;
+
+    left: 17px;
+    bottom: 14px;
+
+    font-family:
+        'Caveat',
+        cursive;
+
+    font-size: 16px;
+}
+
+.bottom-love span {
+
+    color: red;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   TYPING CURSOR
+========================= */
+
+.typing-cursor {
+
+    display: inline-block;
+
+    margin-left: 2px;
+
+    animation:
+        cursorBlink .7s infinite;
+}
+
+@keyframes cursorBlink {
+
+    0%,50% {
+        opacity: 1;
+    }
+
+    51%,100% {
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   HEART PARTICLES
+========================= */
+
+.heart-particle {
+
+    position: fixed;
+
+    font-size: 15px;
+
+    pointer-events: none;
+
+    animation:
+        heartUp 2.5s
+        ease forwards;
+}
+
+@keyframes heartUp {
+
+    0% {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(.7);
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(-180px)
+            scale(1.2);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:500px) {
+
+    .letter {
+
+        min-height: 440px;
+
+        padding:
+            55px 22px 20px;
+    }
+
+    .letter p {
+
+        font-size: 15px;
+    }
+
+    .letter h2 {
+
+        font-size: 18px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     BACKGROUND
+========================= -->
+
+<div class="decor">♡</div>
+<div class="decor">♡</div>
+<div class="decor">✦</div>
+<div class="decor">♡</div>
+
+
+<!-- =========================
+     SCREEN 1
+========================= -->
+
+<section
+    class="screen"
+    id="screen1"
+>
+
+    <div class="intro-card">
+
+        <div class="mail-icon">
+
+            <div class="mail-heart">
+                💗
+            </div>
+
+        </div>
+
+
+        <div class="small-title">
+            A LOVE LETTER AWAITS
+        </div>
+
+
+        <h1>
+
+            <span>
+                A Special Letter ❤️
+            </span>
+
+        </h1>
+
+
+        <button
+            class="open-button"
+            id="openLetter"
+        >
+            ✉ &nbsp; Open Letter
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SCREEN 2
+========================= -->
+
+<section
+    class="screen hidden envelope-screen"
+    id="screen2"
+>
+
+    <div class="envelope-area">
+
+
+        <!-- STARS -->
+
+        <span class="star">✦</span>
+        <span class="star">✧</span>
+        <span class="star">✦</span>
+        <span class="star">✧</span>
+        <span class="star">✦</span>
+
+
+        <!-- ENVELOPE -->
+
+        <div
+            class="envelope"
+            id="envelope"
+        >
+
+            <div class="flap"></div>
+
+            <div class="fold-left"></div>
+
+            <div class="fold-right"></div>
+
+            <div class="envelope-line"></div>
+
+
+            <!-- HEART SEAL -->
+
+            <div
+                class="seal"
+                id="seal"
+            >
+                ♥
+            </div>
+
+        </div>
+
+
+        <div class="tap-text">
+
+            ✧ Tap the wax seal to open ✧
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SCREEN 3
+========================= -->
+
+<section
+    class="screen hidden letter-screen"
+    id="screen3"
+>
+
+
+    <div
+        class="letter"
+        id="letter"
+    >
+
+        <div class="date">
+            August 30, 2026 - with ALI
+        </div>
+
+
+        <!-- TYPING AREAS -->
+
+        <h2 id="greeting"></h2>
+
+
+        <p id="message"></p>
+
+
+        <p id="message2"></p>
+
+
+        <div
+            class="signature"
+            id="signature"
+        ></div>
+
+
+        <div class="bottom-love">
+
+            I Like You
+            <span>♥</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const screen1 =
+    document.getElementById("screen1");
+
+const screen2 =
+    document.getElementById("screen2");
+
+const screen3 =
+    document.getElementById("screen3");
+
+const openLetter =
+    document.getElementById("openLetter");
+
+const envelope =
+    document.getElementById("envelope");
+
+const seal =
+    document.getElementById("seal");
+
+const letter =
+    document.getElementById("letter");
+
+
+/* =========================================
+   SCREEN 1 → SCREEN 2
+========================================= */
+
+openLetter.addEventListener(
+    "click",
+    () => {
+
+        screen1.classList.add("hidden");
+
+
+        setTimeout(() => {
+
+            screen2.classList.remove("hidden");
+
+        }, 500);
+
+    }
+);
+
+
+
+/* =========================================
+   SCREEN 2 → SCREEN 3
+========================================= */
+
+seal.addEventListener(
+    "click",
+    () => {
+
+        /* Open envelope */
+
+        envelope.classList.add("open");
+
+
+        /* Heart particles */
+
+        createHearts();
+
+
+        /* Wait */
+
+        setTimeout(() => {
+
+
+            screen2.classList.add("hidden");
+
+
+            setTimeout(() => {
+
+
+                screen3.classList.remove("hidden");
+
+
+                setTimeout(() => {
+
+                    letter.classList.add("show");
+
+
+                    /* Start typing */
+
+                    setTimeout(
+                        startTyping,
+                        900
+                    );
+
+                }, 150);
+
+
+            }, 500);
+
+
+        }, 1000);
+
+    }
+);
+
+
+
+/* =========================================
+   LETTER CONTENT
+========================================= */
+
+
+
+const greetingText =
+    "Dear Darlene";
+
+const messageText =
+`May gusto akong aminin sa’yo.
+
+Matagal ko na itong gustong sabihin, pero lagi akong nauunahan ng kaba.
+Kaya dito ko na lang sasabihin.
+
+Sa totoo lang, gusto kita. 
+
+At habang tumatagal, mas lalo kong narerealize na nahulog na talaga ako sa’yo.`;
+
+const message2Text =
+'Hindi ko alam kung ano ang magiging sagot mo, pero gusto ko lang maging honest sa’yo.';
+
+const signatureText =
+"— From someone who truly loves you";
+
+
+/* =========================================
+   TYPEWRITER FUNCTION
+========================================= */
+
+function typeText(
+    element,
+    text,
+    speed,
+    callback
+) {
+
+    let index = 0;
+
+
+    /* Cursor */
+
+    const cursor =
+        document.createElement("span");
+
+    cursor.className =
+        "typing-cursor";
+
+    cursor.textContent =
+        "|";
+
+
+    element.appendChild(cursor);
+
+
+    function type() {
+
+
+        if (index < text.length) {
+
+
+            /* Character */
+
+            const char =
+                text[index];
+
+
+            /* Insert BEFORE cursor */
+
+            if (char === "\n") {
+
+                cursor.insertAdjacentHTML(
+                    "beforebegin",
+                    "<br>"
+                );
+
+            } else {
+
+                cursor.insertAdjacentText(
+                    "beforebegin",
+                    char
+                );
+
+            }
+
+
+            index++;
+
+
+            setTimeout(
+                type,
+                speed
+            );
+
+
+        } else {
+
+
+            /* Remove cursor */
+
+            setTimeout(() => {
+
+                cursor.remove();
+
+                if (callback) {
+                    callback();
+                }
+
+            }, 300);
+
+        }
+
+    }
+
+
+    type();
+}
+
+
+
+/* =========================================
+   START TYPING
+========================================= */
+
+function startTyping() {
+
+
+    /* Dear Love */
+
+    typeText(
+
+        document.getElementById(
+            "greeting"
+        ),
+
+        greetingText,
+
+        80,
+
+        () => {
+
+
+            /* First paragraph */
+
+            setTimeout(() => {
+
+
+                typeText(
+
+                    document.getElementById(
+                        "message"
+                    ),
+
+                    messageText,
+
+                    35,
+
+                    () => {
+
+
+                        /* Second paragraph */
+
+                        setTimeout(() => {
+
+
+                            typeText(
+
+                                document.getElementById(
+                                    "message2"
+                                ),
+
+                                message2Text,
+
+                                35,
+
+                                () => {
+
+
+                                    /* Signature */
+
+                                    setTimeout(() => {
+
+
+                                        typeText(
+
+                                            document.getElementById(
+                                                "signature"
+                                            ),
+
+                                            signatureText,
+
+                                            60
+
+                                        );
+
+
+                                    }, 500);
+
+                                }
+
+                            );
+
+
+                        }, 500);
+
+                    }
+
+                );
+
+
+            }, 400);
+
+        }
+
+    );
+
+}
+
+
+
+/* =========================================
+   FLOATING HEARTS
+========================================= */
+
+function createHearts() {
+
+
+    for (
+        let i = 0;
+        i < 15;
+        i++
+    ) {
+
+
+        const heart =
+            document.createElement(
+                "div"
+            );
+
+
+        heart.className =
+            "heart-particle";
+
+
+        heart.innerHTML =
+            Math.random() > .5
+                ? "♥"
+                : "♡";
+
+
+        heart.style.left =
+            (
+                40 +
+                Math.random() * 20
+            ) + "%";
+
+
+        heart.style.top =
+            (
+                42 +
+                Math.random() * 10
+            ) + "%";
+
+
+        heart.style.animationDelay =
+            (
+                Math.random() * .7
+            ) + "s";
+
+
+        document.body.appendChild(
+            heart
+        );
+
+
+        setTimeout(() => {
+
+            heart.remove();
+
+        }, 3000);
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
